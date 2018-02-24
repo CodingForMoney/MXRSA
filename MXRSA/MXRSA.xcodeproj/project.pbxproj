@@ -42,7 +42,7 @@
 		283B89242041140000681FA0 /* asn1write.h in Headers */ = {isa = PBXBuildFile; fileRef = 283B8900204113FF00681FA0 /* asn1write.h */; };
 		283B89252041140000681FA0 /* MXRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 283B8901204113FF00681FA0 /* MXRSA.m */; };
 		283B89262041140000681FA0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 283B8902204113FF00681FA0 /* Info.plist */; };
-		283B89272041140000681FA0 /* MXRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 283B8903204113FF00681FA0 /* MXRSA.h */; };
+		283B89272041140000681FA0 /* MXRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 283B8903204113FF00681FA0 /* MXRSA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +162,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283B89272041140000681FA0 /* MXRSA.h in Headers */,
 				283B89192041140000681FA0 /* platform_time.h in Headers */,
 				283B89072041140000681FA0 /* oid.h in Headers */,
 				283B89172041140000681FA0 /* bn_mul.h in Headers */,
@@ -175,7 +176,6 @@
 				283B891E2041140000681FA0 /* pk_internal.h in Headers */,
 				283B89202041140000681FA0 /* rsa.h in Headers */,
 				283B890E2041140000681FA0 /* config.h in Headers */,
-				283B89272041140000681FA0 /* MXRSA.h in Headers */,
 				283B89082041140000681FA0 /* rsa_internal.h in Headers */,
 				283B891D2041140000681FA0 /* aes.h in Headers */,
 				283B89052041140000681FA0 /* check_config.h in Headers */,
@@ -398,6 +398,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.lxm.MXRSA;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -418,6 +419,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.lxm.MXRSA;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
