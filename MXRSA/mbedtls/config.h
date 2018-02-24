@@ -1,0 +1,213 @@
+
+#ifndef MBEDTLS_CONFIG_H
+#define MBEDTLS_CONFIG_H
+
+/* System support */
+#define MBEDTLS_HAVE_ASM
+#define MBEDTLS_HAVE_TIME
+/* mbed TLS feature support */
+//#define MBEDTLS_PKCS1_V21
+#define MBEDTLS_PKCS1_V15
+#define MBEDTLS_AES_C
+#define MBEDTLS_ASN1_PARSE_C
+#define MBEDTLS_ASN1_WRITE_C
+#define MBEDTLS_BIGNUM_C
+#define MBEDTLS_MD_C
+#define MBEDTLS_OID_C
+#define MBEDTLS_PK_C
+#define MBEDTLS_PK_PARSE_C
+#define MBEDTLS_PK_WRITE_C
+#define MBEDTLS_GENPRIME
+#define MBEDTLS_RSA_C
+#define MBEDTLS_BASE64_C
+#define MBEDTLS_PEM_PARSE_C
+#define MBEDTLS_PEM_WRITE_C
+#define MBEDTLS_FS_IO
+
+
+#include "check_config.h"
+
+// 函数前缀声明
+#define PREFIX_DEFINE(func)   MX_##func
+#ifdef PREFIX_DEFINE
+#define mbedtls_pem_init                    PREFIX_DEFINE(mbedtls_pem_init)
+#define mbedtls_pem_read_buffer             PREFIX_DEFINE(mbedtls_pem_read_buffer)
+#define mbedtls_pem_free                    PREFIX_DEFINE(mbedtls_pem_free)
+#define mbedtls_aes_crypt_ecb               PREFIX_DEFINE(mbedtls_aes_crypt_ecb)
+#define mbedtls_aes_decrypt                 PREFIX_DEFINE(mbedtls_aes_decrypt)
+#define mbedtls_aes_encrypt                 PREFIX_DEFINE(mbedtls_aes_encrypt)
+#define mbedtls_aes_free                    PREFIX_DEFINE(mbedtls_aes_free)
+#define mbedtls_aes_init                    PREFIX_DEFINE(mbedtls_aes_init)
+#define mbedtls_aes_setkey_dec              PREFIX_DEFINE(mbedtls_aes_setkey_dec)
+#define mbedtls_aes_setkey_enc              PREFIX_DEFINE(mbedtls_aes_setkey_enc)
+#define mbedtls_asn1_find_named_data        PREFIX_DEFINE(mbedtls_asn1_find_named_data)
+#define mbedtls_asn1_free_named_data        PREFIX_DEFINE(mbedtls_asn1_free_named_data)
+#define mbedtls_asn1_free_named_data_list   PREFIX_DEFINE(mbedtls_asn1_free_named_data_list)
+#define mbedtls_asn1_get_alg                PREFIX_DEFINE(mbedtls_asn1_get_alg)
+#define mbedtls_asn1_get_alg_null           PREFIX_DEFINE(mbedtls_asn1_get_alg_null)
+#define mbedtls_asn1_get_bitstring          PREFIX_DEFINE(mbedtls_asn1_get_bitstring)
+#define mbedtls_asn1_get_bitstring_null     PREFIX_DEFINE(mbedtls_asn1_get_bitstring_null)
+#define mbedtls_asn1_get_bool               PREFIX_DEFINE(mbedtls_asn1_get_bool)
+#define mbedtls_asn1_get_int                PREFIX_DEFINE(mbedtls_asn1_get_int)
+#define mbedtls_asn1_get_len                PREFIX_DEFINE(mbedtls_asn1_get_len)
+#define mbedtls_asn1_get_mpi                PREFIX_DEFINE(mbedtls_asn1_get_mpi)
+#define mbedtls_asn1_get_sequence_of        PREFIX_DEFINE(mbedtls_asn1_get_sequence_of)
+#define mbedtls_asn1_get_tag                PREFIX_DEFINE(mbedtls_asn1_get_tag)
+#define mbedtls_base64_decode               PREFIX_DEFINE(mbedtls_base64_decode)
+#define mbedtls_base64_encode               PREFIX_DEFINE(mbedtls_base64_encode)
+#define mbedtls_internal_aes_decrypt        PREFIX_DEFINE(mbedtls_internal_aes_decrypt)
+#define mbedtls_internal_aes_encrypt        PREFIX_DEFINE(mbedtls_internal_aes_encrypt)
+#define mbedtls_md                          PREFIX_DEFINE(mbedtls_md)
+#define mbedtls_md_clone                    PREFIX_DEFINE(mbedtls_md_clone)
+#define mbedtls_md_file                     PREFIX_DEFINE(mbedtls_md_file)
+#define mbedtls_md_finish                   PREFIX_DEFINE(mbedtls_md_finish)
+#define mbedtls_md_free                     PREFIX_DEFINE(mbedtls_md_free)
+#define mbedtls_md_get_name                 PREFIX_DEFINE(mbedtls_md_get_name)
+#define mbedtls_md_get_size                 PREFIX_DEFINE(mbedtls_md_get_size)
+#define mbedtls_md_get_type                 PREFIX_DEFINE(mbedtls_md_get_type)
+#define mbedtls_md_hmac                     PREFIX_DEFINE(mbedtls_md_hmac)
+#define mbedtls_md_hmac_finish              PREFIX_DEFINE(mbedtls_md_hmac_finish)
+#define mbedtls_md_hmac_reset               PREFIX_DEFINE(mbedtls_md_hmac_reset)
+#define mbedtls_md_hmac_starts              PREFIX_DEFINE(mbedtls_md_hmac_starts)
+#define mbedtls_md_hmac_update              PREFIX_DEFINE(mbedtls_md_hmac_update)
+#define mbedtls_md_info_from_string         PREFIX_DEFINE(mbedtls_md_info_from_string)
+#define mbedtls_md_info_from_type           PREFIX_DEFINE(mbedtls_md_info_from_type)
+#define mbedtls_md_init                     PREFIX_DEFINE(mbedtls_md_init)
+#define mbedtls_md_init_ctx                 PREFIX_DEFINE(mbedtls_md_init_ctx)
+#define mbedtls_md_list                     PREFIX_DEFINE(mbedtls_md_list)
+#define mbedtls_md_process                  PREFIX_DEFINE(mbedtls_md_process)
+#define mbedtls_md_setup                    PREFIX_DEFINE(mbedtls_md_setup)
+#define mbedtls_md_starts                   PREFIX_DEFINE(mbedtls_md_starts)
+#define mbedtls_md_update                   PREFIX_DEFINE(mbedtls_md_update)
+#define mbedtls_mpi_add_abs                 PREFIX_DEFINE(mbedtls_mpi_add_abs)
+#define mbedtls_mpi_add_int                 PREFIX_DEFINE(mbedtls_mpi_add_int)
+#define mbedtls_mpi_add_mpi                 PREFIX_DEFINE(mbedtls_mpi_add_mpi)
+#define mbedtls_mpi_bitlen                  PREFIX_DEFINE(mbedtls_mpi_bitlen)
+#define mbedtls_mpi_cmp_abs                 PREFIX_DEFINE(mbedtls_mpi_cmp_abs)
+#define mbedtls_mpi_cmp_int                 PREFIX_DEFINE(mbedtls_mpi_cmp_int)
+#define mbedtls_mpi_cmp_mpi                 PREFIX_DEFINE(mbedtls_mpi_cmp_mpi)
+#define mbedtls_mpi_copy                    PREFIX_DEFINE(mbedtls_mpi_copy)
+#define mbedtls_mpi_div_int                 PREFIX_DEFINE(mbedtls_mpi_div_int)
+#define mbedtls_mpi_div_mpi                 PREFIX_DEFINE(mbedtls_mpi_div_mpi)
+#define mbedtls_mpi_exp_mod                 PREFIX_DEFINE(mbedtls_mpi_exp_mod)
+#define mbedtls_mpi_fill_random             PREFIX_DEFINE(mbedtls_mpi_fill_random)
+#define mbedtls_mpi_free                    PREFIX_DEFINE(mbedtls_mpi_free)
+#define mbedtls_mpi_gcd                     PREFIX_DEFINE(mbedtls_mpi_gcd)
+#define mbedtls_mpi_get_bit                 PREFIX_DEFINE(mbedtls_mpi_get_bit)
+#define mbedtls_mpi_grow                    PREFIX_DEFINE(mbedtls_mpi_grow)
+#define mbedtls_mpi_init                    PREFIX_DEFINE(mbedtls_mpi_init)
+#define mbedtls_mpi_inv_mod                 PREFIX_DEFINE(mbedtls_mpi_inv_mod)
+#define mbedtls_mpi_lsb                     PREFIX_DEFINE(mbedtls_mpi_lsb)
+#define mbedtls_mpi_lset                    PREFIX_DEFINE(mbedtls_mpi_lset)
+#define mbedtls_mpi_mod_int                 PREFIX_DEFINE(mbedtls_mpi_mod_int)
+#define mbedtls_mpi_mod_mpi                 PREFIX_DEFINE(mbedtls_mpi_mod_mpi)
+#define mbedtls_mpi_mul_int                 PREFIX_DEFINE(mbedtls_mpi_mul_int)
+#define mbedtls_mpi_mul_mpi                 PREFIX_DEFINE(mbedtls_mpi_mul_mpi)
+#define mbedtls_mpi_read_binary             PREFIX_DEFINE(mbedtls_mpi_read_binary)
+#define mbedtls_mpi_read_file               PREFIX_DEFINE(mbedtls_mpi_read_file)
+#define mbedtls_mpi_read_string             PREFIX_DEFINE(mbedtls_mpi_read_string)
+#define mbedtls_mpi_safe_cond_assign        PREFIX_DEFINE(mbedtls_mpi_safe_cond_assign)
+#define mbedtls_mpi_safe_cond_swap          PREFIX_DEFINE(mbedtls_mpi_safe_cond_swap)
+#define mbedtls_mpi_set_bit                 PREFIX_DEFINE(mbedtls_mpi_set_bit)
+#define mbedtls_mpi_shift_l                 PREFIX_DEFINE(mbedtls_mpi_shift_l)
+#define mbedtls_mpi_shift_r                 PREFIX_DEFINE(mbedtls_mpi_shift_r)
+#define mbedtls_mpi_shrink                  PREFIX_DEFINE(mbedtls_mpi_shrink)
+#define mbedtls_mpi_size                    PREFIX_DEFINE(mbedtls_mpi_size)
+#define mbedtls_mpi_sub_abs                 PREFIX_DEFINE(mbedtls_mpi_sub_abs)
+#define mbedtls_mpi_sub_int                 PREFIX_DEFINE(mbedtls_mpi_sub_int)
+#define mbedtls_mpi_sub_mpi                 PREFIX_DEFINE(mbedtls_mpi_sub_mpi)
+#define mbedtls_mpi_swap                    PREFIX_DEFINE(mbedtls_mpi_swap)
+#define mbedtls_mpi_write_binary            PREFIX_DEFINE(mbedtls_mpi_write_binary)
+#define mbedtls_mpi_write_file              PREFIX_DEFINE(mbedtls_mpi_write_file)
+#define mbedtls_mpi_write_string            PREFIX_DEFINE(mbedtls_mpi_write_string)
+#define mbedtls_oid_get_md_alg              PREFIX_DEFINE(mbedtls_oid_get_md_alg)
+#define mbedtls_oid_get_numeric_string      PREFIX_DEFINE(mbedtls_oid_get_numeric_string)
+#define mbedtls_oid_get_oid_by_md           PREFIX_DEFINE(mbedtls_oid_get_oid_by_md)
+#define mbedtls_oid_get_oid_by_pk_alg       PREFIX_DEFINE(mbedtls_oid_get_oid_by_pk_alg)
+#define mbedtls_oid_get_oid_by_sig_alg      PREFIX_DEFINE(mbedtls_oid_get_oid_by_sig_alg)
+#define mbedtls_oid_get_pk_alg              PREFIX_DEFINE(mbedtls_oid_get_pk_alg)
+#define mbedtls_oid_get_sig_alg             PREFIX_DEFINE(mbedtls_oid_get_sig_alg)
+#define mbedtls_oid_get_sig_alg_desc        PREFIX_DEFINE(mbedtls_oid_get_sig_alg_desc)
+#define mbedtls_pk_can_do                   PREFIX_DEFINE(mbedtls_pk_can_do)
+#define mbedtls_pk_check_pair               PREFIX_DEFINE(mbedtls_pk_check_pair)
+#define mbedtls_pk_debug                    PREFIX_DEFINE(mbedtls_pk_debug)
+#define mbedtls_pk_decrypt                  PREFIX_DEFINE(mbedtls_pk_decrypt)
+#define mbedtls_pk_encrypt                  PREFIX_DEFINE(mbedtls_pk_encrypt)
+#define mbedtls_pk_free                     PREFIX_DEFINE(mbedtls_pk_free)
+#define mbedtls_pk_get_bitlen               PREFIX_DEFINE(mbedtls_pk_get_bitlen)
+#define mbedtls_pk_get_name                 PREFIX_DEFINE(mbedtls_pk_get_name)
+#define mbedtls_pk_get_type                 PREFIX_DEFINE(mbedtls_pk_get_type)
+#define mbedtls_pk_info_from_type           PREFIX_DEFINE(mbedtls_pk_info_from_type)
+#define mbedtls_pk_init                     PREFIX_DEFINE(mbedtls_pk_init)
+#define mbedtls_pk_load_file                PREFIX_DEFINE(mbedtls_pk_load_file)
+#define mbedtls_pk_parse_key                PREFIX_DEFINE(mbedtls_pk_parse_key)
+#define mbedtls_pk_parse_keyfile            PREFIX_DEFINE(mbedtls_pk_parse_keyfile)
+#define mbedtls_pk_parse_public_key         PREFIX_DEFINE(mbedtls_pk_parse_public_key)
+#define mbedtls_pk_parse_public_keyfile     PREFIX_DEFINE(mbedtls_pk_parse_public_keyfile)
+#define mbedtls_pk_parse_subpubkey          PREFIX_DEFINE(mbedtls_pk_parse_subpubkey)
+#define mbedtls_pk_setup                    PREFIX_DEFINE(mbedtls_pk_setup)
+#define mbedtls_pk_sign                     PREFIX_DEFINE(mbedtls_pk_sign)
+#define mbedtls_pk_verify                   PREFIX_DEFINE(mbedtls_pk_verify)
+#define mbedtls_pk_verify_ext               PREFIX_DEFINE(mbedtls_pk_verify_ext)
+#define mbedtls_rsa_check_privkey           PREFIX_DEFINE(mbedtls_rsa_check_privkey)
+#define mbedtls_rsa_check_pub_priv          PREFIX_DEFINE(mbedtls_rsa_check_pub_priv)
+#define mbedtls_rsa_check_pubkey            PREFIX_DEFINE(mbedtls_rsa_check_pubkey)
+#define mbedtls_rsa_complete                PREFIX_DEFINE(mbedtls_rsa_complete)
+#define mbedtls_rsa_copy                    PREFIX_DEFINE(mbedtls_rsa_copy)
+#define mbedtls_rsa_deduce_crt              PREFIX_DEFINE(mbedtls_rsa_deduce_crt)
+#define mbedtls_rsa_deduce_primes           PREFIX_DEFINE(mbedtls_rsa_deduce_primes)
+#define mbedtls_rsa_deduce_private_exponent PREFIX_DEFINE(mbedtls_rsa_deduce_private_exponent)
+#define mbedtls_rsa_export                  PREFIX_DEFINE(mbedtls_rsa_export)
+#define mbedtls_rsa_export_crt              PREFIX_DEFINE(mbedtls_rsa_export_crt)
+#define mbedtls_rsa_export_raw              PREFIX_DEFINE(mbedtls_rsa_export_raw)
+#define mbedtls_rsa_free                    PREFIX_DEFINE(mbedtls_rsa_free)
+#define mbedtls_rsa_get_len                 PREFIX_DEFINE(mbedtls_rsa_get_len)
+#define mbedtls_rsa_import                  PREFIX_DEFINE(mbedtls_rsa_import)
+#define mbedtls_rsa_import_raw              PREFIX_DEFINE(mbedtls_rsa_import_raw)
+#define mbedtls_rsa_init                    PREFIX_DEFINE(mbedtls_rsa_init)
+#define mbedtls_rsa_pkcs1_decrypt           PREFIX_DEFINE(mbedtls_rsa_pkcs1_decrypt)
+#define mbedtls_rsa_pkcs1_encrypt           PREFIX_DEFINE(mbedtls_rsa_pkcs1_encrypt)
+#define mbedtls_rsa_pkcs1_sign              PREFIX_DEFINE(mbedtls_rsa_pkcs1_sign)
+#define mbedtls_rsa_pkcs1_verify            PREFIX_DEFINE(mbedtls_rsa_pkcs1_verify)
+#define mbedtls_rsa_private                 PREFIX_DEFINE(mbedtls_rsa_private)
+#define mbedtls_rsa_public                  PREFIX_DEFINE(mbedtls_rsa_public)
+#define mbedtls_rsa_rsaes_pkcs1_v15_decrypt PREFIX_DEFINE(mbedtls_rsa_rsaes_pkcs1_v15_decrypt)
+#define mbedtls_rsa_rsaes_pkcs1_v15_encrypt PREFIX_DEFINE(mbedtls_rsa_rsaes_pkcs1_v15_encrypt)
+#define mbedtls_rsa_rsassa_pkcs1_v15_sign   PREFIX_DEFINE(mbedtls_rsa_rsassa_pkcs1_v15_sign)
+#define mbedtls_rsa_rsassa_pkcs1_v15_verify PREFIX_DEFINE(mbedtls_rsa_rsassa_pkcs1_v15_verify)
+#define mbedtls_rsa_set_padding             PREFIX_DEFINE(mbedtls_rsa_set_padding)
+#define mbedtls_rsa_validate_crt            PREFIX_DEFINE(mbedtls_rsa_validate_crt)
+#define mbedtls_rsa_validate_params         PREFIX_DEFINE(mbedtls_rsa_validate_params)
+#define mbedtls_pem_write_buffer            PREFIX_DEFINE(mbedtls_pem_write_buffer)
+#define mbedtls_pk_write_pubkey_pem         PREFIX_DEFINE(mbedtls_pk_write_pubkey_pem)
+#define mbedtls_pk_write_key_pem            PREFIX_DEFINE(mbedtls_pk_write_key_pem)
+#define mbedtls_pk_write_key_der            PREFIX_DEFINE(mbedtls_pk_write_key_der)
+#define mbedtls_pk_write_pubkey_der         PREFIX_DEFINE(mbedtls_pk_write_pubkey_der)
+
+#define mbedtls_asn1_store_named_data                    PREFIX_DEFINE(mbedtls_asn1_store_named_data)
+#define mbedtls_asn1_write_algorithm_identifier          PREFIX_DEFINE(mbedtls_asn1_write_algorithm_identifier)
+#define mbedtls_asn1_write_bitstring                     PREFIX_DEFINE(mbedtls_asn1_write_bitstring)
+#define mbedtls_asn1_write_bool                          PREFIX_DEFINE(mbedtls_asn1_write_bool)
+#define mbedtls_asn1_write_ia5_string                    PREFIX_DEFINE(mbedtls_asn1_write_ia5_string)
+#define mbedtls_asn1_write_int                           PREFIX_DEFINE(mbedtls_asn1_write_int)
+#define mbedtls_asn1_write_len                           PREFIX_DEFINE(mbedtls_asn1_write_len)
+#define mbedtls_asn1_write_mpi                           PREFIX_DEFINE(mbedtls_asn1_write_mpi)
+#define mbedtls_asn1_write_null                          PREFIX_DEFINE(mbedtls_asn1_write_null)
+#define mbedtls_asn1_write_octet_string                  PREFIX_DEFINE(mbedtls_asn1_write_octet_string)
+#define mbedtls_asn1_write_oid                           PREFIX_DEFINE(mbedtls_asn1_write_oid)
+#define mbedtls_asn1_write_printable_string              PREFIX_DEFINE(mbedtls_asn1_write_printable_string)
+#define mbedtls_asn1_write_raw_buffer                    PREFIX_DEFINE(mbedtls_asn1_write_raw_buffer)
+#define mbedtls_asn1_write_tag                           PREFIX_DEFINE(mbedtls_asn1_write_tag)
+#define mbedtls_mpi_gen_prime                            PREFIX_DEFINE(mbedtls_mpi_gen_prime)
+#define mbedtls_mpi_is_prime                             PREFIX_DEFINE(mbedtls_mpi_is_prime)
+#define mbedtls_pk_write_pubkey                          PREFIX_DEFINE(mbedtls_pk_write_pubkey)
+#define mbedtls_rsa_gen_key                              PREFIX_DEFINE(mbedtls_rsa_gen_key)
+#define mbedtls_rsa_info                                 PREFIX_DEFINE(mbedtls_rsa_info)
+
+#endif
+
+
+
+#endif
+
+
