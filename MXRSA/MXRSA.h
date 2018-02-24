@@ -139,7 +139,7 @@ typedef NS_ENUM(size_t, MXRSAKeySize) {
 
 #pragma mark - 密钥对生成
 /**
- 密钥对生成
+ 密钥对生成 , 需要注意密钥生成时耗时操作， 建议放在异步线程中，不要阻塞主线程。
  exponent 固定为 65537
  @param privateKey 私钥
  @param publicKey 公钥
