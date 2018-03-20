@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name         = "MXRSA"
-	s.version      = "0.0.1"
+	s.version      = "0.0.2"
 	s.summary      = "MXRSA - 使用mbedtls的简单RSA工具库"
 
 	s.homepage     = "https://github.com/CodingForMoney/MXRSA"
@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
 	s.subspec 'mbedtls' do |sp|
 		sp.source_files = 'MXRSA/mbedtls/*.{h,c}'
 	end
+	s.public_header_files = 'MXRSA/MXRSA.h'
 end

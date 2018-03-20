@@ -50,21 +50,27 @@ i+ZxICxKxOQcxjc=\
     NSData *cipher;
     NSData *plain;
     
-    cipher = [MXRSA encryptData:input usingPublicKeyFile:public];
-    plain = [MXRSA decryptData:cipher usingPrivateKeyFile:private];
-    NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
+    int64_t s = [[NSDate date] timeIntervalSince1970] * 1000;
     
-    cipher = [MXRSA encryptData:input usingPlulicKeyString:PublicKey];
-    plain = [MXRSA decryptData:cipher usingPrivateKeyString:PrivateKey];
-    NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
-    
-    cipher = [MXRSA encryptData:input usingPrivateKeyFile:private];
-    plain = [MXRSA decryptData:cipher usingPublicKeyFile:public];
-    NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
-    
-    cipher = [MXRSA encryptData:input usingPrivateKeyString:PrivateKey];
-    plain = [MXRSA decryptData:cipher usingPlulicKeyString:PublicKey];
-    NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
+    for (NSInteger i = 0; i < 10; i ++) {
+        cipher = [MXRSA encryptData:input usingPublicKeyFile:public];
+        plain = [MXRSA decryptData:cipher usingPrivateKeyFile:private];
+        NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
+        
+        cipher = [MXRSA encryptData:input usingPlulicKeyString:PublicKey];
+        plain = [MXRSA decryptData:cipher usingPrivateKeyString:PrivateKey];
+        NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
+        
+        cipher = [MXRSA encryptData:input usingPrivateKeyFile:private];
+        plain = [MXRSA decryptData:cipher usingPublicKeyFile:public];
+        NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
+        
+        cipher = [MXRSA encryptData:input usingPrivateKeyString:PrivateKey];
+        plain = [MXRSA decryptData:cipher usingPlulicKeyString:PublicKey];
+        NSLog(@"%@",[[NSString alloc] initWithData:plain encoding:NSUTF8StringEncoding]);
+    }
+    int64_t e = [[NSDate date] timeIntervalSince1970] * 1000;
+    NSLog(@"最终耗时位 ：%@", @(e - s));
     
     
     NSString *publicStr;

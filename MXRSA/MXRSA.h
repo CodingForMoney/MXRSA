@@ -57,7 +57,7 @@ typedef NS_ENUM(size_t, MXRSAKeySize) {
 
  @param plain 明文
  @param keyString 公钥文件内容 , 公钥字符串的第一行-----BEGIN PUBLIC KEY----- 后必须有换行符 ,示例如下
- 
+ 公私钥文件的格式，都是pkcs8格式的。 一定要注意换行符。
  static NSString *const PublicKey = @"-----BEGIN PUBLIC KEY-----\r\n\
  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDxdwcxXxhCf5cWgkXYLI5+hyXg\
  p+1SMuKh98r2lWnIPHeCAX+Hr40mKhmBiXsgyRH9RLlDchP2FtnWm6JbicPUkgfv\
